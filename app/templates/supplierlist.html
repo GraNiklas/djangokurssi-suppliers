@@ -8,6 +8,12 @@
 
 <button id="add-btn" class="btn btn-success btn-sm" onclick="showaddform()">Add new supplier</button>
 
+<form method="post" action="/search-suppliers/">
+    {% csrf_token %}
+    <input class="card-text" type="text" placeholder="search" name="search" />
+    <input class="btn btn-success btn-sm"  type="submit" name="" />
+</form>
+
 <h1 style="color:violet">Suppliers</h1>
 
 

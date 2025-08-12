@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<h1>Supplier edit</h1>
+
+<div class="card" style="max-width:50rem">
+    <div class="card-header">
+        <h5 class="card-text">Editing:{{supplier.companyname}} from {{supplier.country}}</h5>
+        <div class="card-body">
+            <form method="post" action="/edit-supplier-post/{{supplier.id}}/">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label>companyname</label>
+                    <input type="text" name="companyname" value="{{supplier.companyname}}" />
+                </div>
+                <div class="form-group">
+                    <label>contactname</label>
+                    <input type="text" name="contactname" value="{{supplier.contactname}}" />
+                </div>
+                <div class="form-group">
+                    <label>address</label>
+                    <input type="text" name="address" value="{{supplier.address}}" />
+                </div>
+                <div class="form-group">
+                    <label>phone</label>
+                    <input type="text" name="phone" value="{{supplier.phone}}" />
+                </div>
+
+                <div class="form-group">
+                    <label>email</label>
+                    <input type="text" name="email" value="{{supplier.email}}" />
+                </div>
+
+                <div class="form-group">
+                    <label>country</label>
+                    <input type="text" name="country" value="{{supplier.country}}" />
+                </div>
+
+                <input type="submit" value="Update" class="btn btn-success btn-sm" />
+                <input type="button" onclick="window.location.href='/suppliers'" id="hide-btn"
+                       value="Cancel" class="btn btn-secondary btn-sm" />
+            </form>"
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+ 
